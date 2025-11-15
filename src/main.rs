@@ -4,6 +4,12 @@ fn main() {
     st_ex();
     let x = returner();
     println!("the value returned from func is ==> {x}");
+    let (sum, diff) = sum_diff(23, 23);
+    println!("sum {} diff {}", sum, diff);
+
+    // printing tuple we use {:?} :D
+    let tup = (sum, diff);
+    println!("{:?}", tup);
 }
 
 //statements and expressions :2025-11-15 14:24
@@ -36,4 +42,10 @@ fn another_function(num: i32) {
 fn returner() -> i32 {
     println!("printing from the returning function :D");
     1 + 2
+    // can also use return keyword and the rest below code will not be exicuted :D
+    // using return keyword is known as early return ? idk.. :?
+}
+
+fn sum_diff(x: i32, y: i32) -> (i32, i32) {
+    (x + y, x - y)
 }
