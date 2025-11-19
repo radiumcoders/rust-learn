@@ -1,0 +1,37 @@
+fn main() {
+    // s is not valid
+
+    let mut s = String::from("hello "); // s is valid and is on the heap
+
+    s.push_str(", World");
+
+    println!("{s}");
+
+    move_copy();
+    move_trait();
+} //s is no longer valid we call drop :D 
+//
+//
+// let s1 = "hello";
+// let s2 = s1'' will not give any error but
+//
+// let s1 = String::from("hello");
+// let s2 = s1; will give a error :( the s1 becomes unvalid and gets removed ... :\ it follows move
+// trait
+
+fn move_copy() {
+    let s = String::from("hello");
+    let w3 = s.clone();
+    println!("s is -> {} and w3 is --> {}", s, w3);
+}
+
+fn move_trait() {
+    let s = String::from("hello");
+    println!("{s}");
+    // s gets droped and moved to the ss :D
+    let ss = s;
+    println!("{ss}");
+    // println!("{s}");
+    // will give error as the s is moved to ss and s no longer exists :( the existance is erased by
+    // thanos XD
+}
