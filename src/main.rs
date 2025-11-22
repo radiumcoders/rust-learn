@@ -14,9 +14,9 @@ fn call_int(i: i32) {
     println!("printing from fn {i}");
 }
 
-//fn call_str(s: String) {
+// fn call_str(s: String) {
 //  println!("printing from fn {s}");
-//}
+// }
 
 //borrowing the variable
 fn borrowing(s: &mut String) {
