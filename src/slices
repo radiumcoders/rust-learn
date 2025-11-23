@@ -1,0 +1,31 @@
+fn main() {
+    // slices of array of chars :X
+    let arr: [char; 5] = ['a', 'b', 'c', 'd', 'e'];
+    let slice: &[char] = &arr[0..=3];
+    println!("array -> {:?} slice of arr -> {:?}", arr, slice);
+
+    //slice of vector of int
+    let vec = vec![0, 1, 2, 3, 4, 5, 6, 7];
+    let sli: &[i32] = &vec[1..3];
+    println!("vector {:?} slice {:?}", vec, sli);
+
+    //slice for string
+    let s = String::from("helloworld");
+    let sl = &s[1..4];
+    println!("{s}{sl}");
+
+    let ss = String::from("hello world");
+    let sss = first_word(&ss);
+    println!("the first word is {sss}");
+}
+
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+    for (i, &items) in bytes.iter().enumerate() {
+        if items == b' ' {
+            return &s[..i];
+        };
+    }
+    s
+}
+
