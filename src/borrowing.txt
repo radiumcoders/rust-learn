@@ -1,0 +1,18 @@
+fn main() {
+    let i = 5;
+    let mut s = String::from("ruster");
+    call_int(i);
+    println!("after calling fn to print value -> {i}");
+    borrowing(&mut s);
+    println!("the value of s after borrowing {s}")
+}
+
+fn call_int(i: i32) {
+    println!("printing from fn {i}");
+}
+
+fn borrowing(s: &mut String) {
+    println!("borrowing");
+    s.push_str(" world");
+    *s = String::from("Hello Errorss XD")
+}
