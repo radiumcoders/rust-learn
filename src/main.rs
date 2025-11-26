@@ -5,6 +5,11 @@ struct User {
     is_active: bool,
 }
 
+struct Color(i32, i32, i32);
+
+#[derive(Debug)]
+struct Unit;
+
 fn main() {
     let user1 = User {
         name: String::from("Radium COders"),
@@ -50,4 +55,14 @@ fn main() {
     // IsActive :- {}"#,
     //     user1.name, user1.email, user1.age, user1.is_active
     // );
+
+    //tupple structs
+    let tup_str = Color(1212, 0000, 1234);
+    println!(
+        "values from tupple struct 1st {} 2nd {} 3rd {}",
+        tup_str.0, tup_str.1, tup_str.2
+    );
+
+    let uni_str = Unit;
+    println!("{:?}", uni_str);
 }
