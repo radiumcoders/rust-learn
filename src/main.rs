@@ -65,4 +65,6 @@ fn main() {
 
     let uni_str = Unit;
     println!("{:?}", uni_str);
+
+    //struct functions are comming
 }
