@@ -21,21 +21,36 @@
 //     };
 //     println!("{:?}", home);
 // }
-#[derive(Debug)]
-enum Methods{
-    Create(String),
-    Locate(i32),
-    Quit
-}
+// #[derive(Debug)]
+// enum Methods{
+//     Create(String),
+//     Locate(i32),
+//     Quit
+// }
+ 
+// impl Methods {
+//     fn call (&self) {
+//         println!("{:?}",self)
+//     }
+// }
 
-impl Methods {
-    fn call (&self) {
-        println!("{:?}",self)
+
+// fn main () {
+//     let g = Methods::Create(String::from("Hello"));
+//     g.call();
+// }
+
+
+
+fn main ()  {
+    let string_option_some = Some(String::from("Hello Rust"));
+    let string_option_none : Option<String> = None;
+    match string_option_some {
+        Some(value) => println!("Some({})", value),
+        None => println!("None"),
     }
-}
-
-
-fn main () {
-    let g = Methods::Create(String::from("Hello"));
-    g.call();
+    match string_option_none {
+        Some(value) => println!("Some({})", value),
+        None => println!("None"),
+    }
 }
