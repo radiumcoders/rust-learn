@@ -42,15 +42,38 @@
 
 
 
-fn main ()  {
-    let string_option_some = Some(String::from("Hello Rust"));
-    let string_option_none : Option<String> = None;
-    match string_option_some {
-        Some(value) => println!("Some({})", value),
-        None => println!("None"),
-    }
-    match string_option_none {
-        Some(value) => println!("Some({})", value),
-        None => println!("None"),
+// fn main ()  {
+//     let string_option_some = Some(String::from("Hello Rust"));
+//     let string_option_none : Option<String> = None;
+//     match string_option_some {
+//         Some(value) => println!("Some({})", value),
+//         None => println!("None"),
+//     }
+//     match string_option_none {
+//         Some(value) => println!("Some({})", value),
+//         None => println!("None"),
+//     }
+// }
+// 
+// 
+// enum Coin {
+//     Inr,
+//     Usd,
+//     Euro,
+//     Pound
+// }
+// fn main() {
+//     match Coin::Euro {
+//         Coin::Euro => println!("Euro!"),
+//         Coin::Usd => println!("Usd!"),
+//         Coin::Inr => println!("Inr!"),
+//         Coin::Pound => println!("Pound!"),
+//     };
+// }
+ 
+fn main () {
+    let some_val = Some(4);
+    if let Some(4) = some_val {
+        println!("Matched!");
     }
 }
