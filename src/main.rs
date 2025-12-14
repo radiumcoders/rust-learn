@@ -1,79 +1,17 @@
-// #[derive(Debug)]
-// enum Direction {
-//     Up,
-//     Down,
-//     Left,
-//     Right,
-// }
+// check if the number is palindrome or not without cinverting to string
 
-// #[derive(Debug)]
-// struct Home {
-//     address: String,
-//     direction:Direction,
-// }
-
-// fn main () {
-//     let up = Direction::Up;
-//     println!("{:?}", up);
-//     let home = Home  {
-//         address: String::from("1234, marconi street"),
-//         direction: Direction::Up
-//     };
-//     println!("{:?}", home);
-// }
-// #[derive(Debug)]
-// enum Methods{
-//     Create(String),
-//     Locate(i32),
-//     Quit
-// }
- 
-// impl Methods {
-//     fn call (&self) {
-//         println!("{:?}",self)
-//     }
-// }
-
-
-// fn main () {
-//     let g = Methods::Create(String::from("Hello"));
-//     g.call();
-// }
-
-
-
-// fn main ()  {
-//     let string_option_some = Some(String::from("Hello Rust"));
-//     let string_option_none : Option<String> = None;
-//     match string_option_some {
-//         Some(value) => println!("Some({})", value),
-//         None => println!("None"),
-//     }
-//     match string_option_none {
-//         Some(value) => println!("Some({})", value),
-//         None => println!("None"),
-//     }
-// }
-// 
-// 
-// enum Coin {
-//     Inr,
-//     Usd,
-//     Euro,
-//     Pound
-// }
-// fn main() {
-//     match Coin::Euro {
-//         Coin::Euro => println!("Euro!"),
-//         Coin::Usd => println!("Usd!"),
-//         Coin::Inr => println!("Inr!"),
-//         Coin::Pound => println!("Pound!"),
-//     };
-// }
- 
-fn main () {
-    let some_val = Some(4);
-    if let Some(4) = some_val {
-        println!("Matched!");
+fn main() {
+    let num = -12341;
+    let mut rev = 0;
+    let mut n = num;
+    if num < 0 {
+        return false;
+    } else {
+        while n > 0 {
+            let rem = n % 10; // extract the last digit
+            n = n / 10; // remove the last digit
+            rev = rev * 10 + rem; // add the last digit in the reversed
+        }
     }
+    return num == rev;
 }
