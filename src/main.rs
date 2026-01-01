@@ -1,1 +1,41 @@
-fn main() {}
+use std::collections::HashMap;
+
+fn main() {
+    let blue = String::from("blue");
+    let red = String::from("red");
+
+    let mut scores = HashMap::new();
+    scores.insert(blue, 10);
+    scores.insert(red, 50);
+    // now the ownership is moved to the hashmap for the strings we created.
+    let score_for_blue = scores.get("blue");
+    match score_for_blue {
+        Some(score) => println!("The score for blue is: {}", score),
+        None => println!("No score found for blue or invalid ke :("),
+    }
+    //iterating over key-value pairs
+    iterator_over_hash(&scores);
+    //create a entery if not and do nothing if it exists
+    scores.entry(String::from("green")).or_insert(30);
+    iterator_over_hash(&scores);
+
+    program();
+}
+
+fn iterator_over_hash(hash: &HashMap<String, i32>) {
+    println!("--- Iterating over HashMap ---");
+    for (key, value) in hash {
+        println!("Key: {}, Value: {}", key, value);
+    }
+    println!("-------------------");
+}
+
+fn program() {
+    let sentence = "hello world wonderfull world";
+    let mut map = HashMap::new();
+    for word in sentence.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+    println!("{:?}", map);
+}
