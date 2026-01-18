@@ -1,0 +1,14 @@
+use std::collections::HashMap;
+
+fn main() {
+    let s = "pwwkew";
+    let mut count = HashMap::new();
+    for c in s.chars() {
+        count.entry(c).and_modify(|e| *e += 1).or_insert(1);
+    }
+    let stee = count.keys();
+    println!("{} , {:?}", stee.len() , stee);
+}
+
+// babab -> ab
+// here we are creating a hashmap and then just taking keys
