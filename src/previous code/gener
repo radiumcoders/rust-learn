@@ -1,0 +1,11 @@
+struct Point<T> {
+    x :T,
+    y: T
+}
+
+fn main() {
+    // generics
+    let point = Point { x: 0, y: 0 };
+    let point_2 = Point { x: 'a', y: 'b' };
+    println!("Point 1: ({}, {}), Point 2: ({}, {})", point.x, point.y, point_2.x, point_2.y);
+}
